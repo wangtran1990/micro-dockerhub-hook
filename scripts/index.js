@@ -3,7 +3,8 @@ const scripts = {
   'maccyber/maccyber.io': 'maccyber.io.sh',
   'maccyber/tagtest:prod': 'tag.sh', // repo/image:tag
   'maccyber/fail': 'fail.sh',
-  'anshkathuria/tagtest:release-[0-9.]+': 'tag.sh'
+  'anshkathuria/tagtest:release-[0-9.]+': 'tag.sh',
+  'wangtran1990/docker_with_sailsjs': 'release.sh'
 }
 
 module.exports = (repoName, tag) => {
