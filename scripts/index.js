@@ -4,7 +4,7 @@ const scripts = {
   'maccyber/tagtest:prod': 'tag.sh', // repo/image:tag
   'maccyber/fail': 'fail.sh',
   'anshkathuria/tagtest:release-[0-9.]+': 'tag.sh',
-  'wangtran1990/docker_with_sailsjs': 'release.sh'
+  'wangtran1990/docker_with_sailsjs:latest': 'release.sh'
 }
 
 module.exports = (repoName, tag) => {

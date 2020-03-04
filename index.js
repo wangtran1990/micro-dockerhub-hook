@@ -13,6 +13,7 @@ module.exports = async (req, res) => {
   let payload
   try {
     payload = await json(req) // gets payload
+    logger('debug', `Payload from docker hub:\n ${JSON.stringify(payload, null, 2)}`)
   } catch (e) {
     logger('err', 'Missing JSON payload')
     return send(res, 400, 'Missing JSON payload')
