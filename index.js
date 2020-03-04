@@ -11,6 +11,34 @@ module.exports = async (req, res) => {
   if (pathname === '/ping') return send(res, 200, 'pong')
 
   let payload
+  /**
+  {
+    "push_data": {
+      "pushed_at": 1583307775,
+      "images": [],
+      "tag": "latest",
+      "pusher": "wangtran1990"
+    },
+    "callback_url": "https://registry.hub.docker.com/u/wangtran1990/docker_with_sailsjs/hook/2bcdh3i0gbfb14cbaf4be5bi0dc0aj3ea/",
+    "repository": {
+      "status": "Active",
+      "description": "",
+      "is_trusted": false,
+      "full_description": "xxx",
+      "repo_url": "https://hub.docker.com/r/wangtran1990/docker_with_sailsjs",
+      "owner": "wangtran1990",
+      "is_official": false,
+      "is_private": false,
+      "name": "docker_with_sailsjs",
+      "namespace": "wangtran1990",
+      "star_count": 0,
+      "comment_count": 0,
+      "date_created": 1583049024,
+      "dockerfile": "FROM node\n\nENV APP_PATH /venv\n\nWORKDIR $APP_PATH\n\nCOPY start.sh /venv\n\nCOPY source /venv\n\nRUN chmod a+x /venv/*\n\nRUN npm install pm2 -g --silent\n\nRUN npm install --silent\n\nENV NODE_ENV=staging\n\nENTRYPOINT [\"/venv/start.sh\"]\n\nEXPOSE 1400",
+      "repo_name": "wangtran1990/docker_with_sailsjs"
+    }
+  }
+  */
   try {
     payload = await json(req) // gets payload
     logger('debug', `Payload from docker hub:\n ${JSON.stringify(payload, null, 2)}`)
